@@ -1,0 +1,31 @@
+
+<%- include("partials/header") %>
+<h1 class="homeH1">Home</h1>
+
+<p class="homeP"> <%= statrtingContent %> </p>
+
+<%# Traditional for loop %>
+
+ <%#  console.log(Posts) %> 
+
+ <%# for (let i = 0; i < Posts.length; i++) { %> 
+  
+    <%#  console.log(Posts[i].Title) %> 
+
+    <%# } %>
+
+    
+<% Posts.forEach(function(post) { %>
+    <h1 class="homeH1"> <%= post.Title %> </h1>
+    <p class="homeP">
+         <%= post.Body.substring(0, 200) + " ...."  %>
+         <a href="/posts/<%= post.Title %>">Read More</a>
+    </p> 
+    <% }); %>
+
+<%- include("partials/footer") %>
+
+
+
+
+
